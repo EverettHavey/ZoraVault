@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { background: #050505; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        h1 { font-size: 3.5vw; margin-bottom: 30px; letter-spacing: 1px; }
+        
+        .profile-group { display: flex; gap: 40px; }
+        
+        .profile { text-align: center; cursor: pointer; text-decoration: none; color: gray; transition: 0.3s; }
+        .profile:hover { color: white; transform: scale(1.05); }
+
+        .avatar {
+            width: 150px; height: 150px;
+            background: #9d00ff; border-radius: 12px;
+            margin-bottom: 15px; border: 4px solid transparent;
+            display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;
+        }
+        .profile:hover .avatar { border-color: white; }
+
+        @media (max-width: 600px) {
+            .profile-group { flex-wrap: wrap; justify-content: center; }
+            .avatar { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Who's watching?</h1>
+        <div class="profile-group">
+            <a href="browse.html" class="profile">
+                <div class="avatar">Z</div>
+                <span>Admin</span>
+            </a>
+            <div class="profile">
+                <div class="avatar" style="background: #333;">+</div>
+                <span>Add Profile</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

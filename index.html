@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZoraVault - Watch TV Shows Online, Watch Movies Online</title>
+    <style>
+        /* --- Modern Netflix-Style Reset --- */
+        :root {
+            --netflix-red: #e50914;
+            --zora-purple: #9d00ff;
+            --btn-hover: #b20710;
+            --bg-black: #000000;
+            --gray-text: #737373;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-black);
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header / Navbar --- */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            box-sizing: border-box;
+            z-index: 10;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+        }
+
+        .logo {
+            color: var(--zora-purple);
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .signin-btn {
+            background-color: var(--zora-purple);
+            color: white;
+            padding: 7px 17px;
+            font-weight: 400;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 750px;
+            border-bottom: 8px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('images/movies.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.125rem;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .hero-content h2 {
+            font-size: 1.625rem;
+            font-weight: 400;
+            margin: 1rem 0;
+        }
+
+        .cta-container {
+            margin-top: 20px;
+        }
+
+        .email-form {
+            display: flex;
+            justify-content: center;
+            height: 60px;
+            margin-top: 20px;
+        }
+
+        .email-form input {
+            width: 450px;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .btn-get-started {
+            background-color: var(--zora-purple);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .btn-get-started:hover {
+            background-color: #7b00cc;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 740px) {
+            nav { padding: 20px; }
+            .hero-content h1 { font-size: 1.75rem; }
+            .hero-content h2 { font-size: 1.125rem; }
+            .email-form { flex-direction: column; height: auto; align-items: center; }
+            .email-form input { width: 90%; height: 50px; margin-bottom: 10px; }
+            .btn-get-started { padding: 10px 20px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="mainNav">
+        <div class="logo">ZORAVAULT</div>
+        <a href="profiles.html" class="signin-btn">Sign In</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <div class="cta-container">
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <form class="email-form" id="ctaForm">
+                    <input type="email" placeholder="Email address" required>
+                    <button type="submit" class="btn-get-started">Get Started ></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Form Handling
+        document.getElementById('ctaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real app, you'd save the email here
+            window.location.href = 'profiles.html';
+        });
+
+        // Simple Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent)';
+            }
+        });
+    </script>
+</body>
+</html>
